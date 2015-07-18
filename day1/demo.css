@@ -1,0 +1,19 @@
+h1 {
+  color: red;
+}
+
+div {
+  color: blue;
+  font-weight: bold;
+}
+
+#welcome {
+  color:blue;
+}
+#CSSI {
+  color:green;
+}
+
+.green_text {
+  color:brown;
+}

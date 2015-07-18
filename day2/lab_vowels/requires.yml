@@ -1,0 +1,6 @@
+# A list of javascript files required for the project, in dependency order
+javascripts:
+  files:
+    - lib/isAVowel.js
+  specs:
+    - spec/isAVowel.spec.js

@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  color:yellow;
+  background-color: brown;
+}
+
+h1, h2 {
+  font-family: 'Oswald', sans-serif;
+}
+
+.song_name {
+  display: active;
+  font-weight: bold;
+  font-style: italic;
+}
+
+ul {
+  background-color: black;
+  padding: 20px;
+
+}

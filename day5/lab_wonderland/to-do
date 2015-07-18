@@ -1,0 +1,25 @@
+#What are the top 10 most frequently-used words in the text?
+
+#What are the 10 least frequently-used words in the text?
+
+#How many words are used more than 100 times? What are they?
+
+#How many times does the word "Alice" appear? How about "Wonderland"?
+
+What are the top 10 most frequently-used bigrams (pairs of consecutive words) in the text? For
+example "use the big spoon" would generate three bigrams: "use the", "the big" and "big spoon".
+
+CHALLENGE
+Using the frequency data collected above and Python's random module,
+generate random text with the same frequency distribution as Alice in Wonderland.
+That is, if a word appears 5% of the time in Alice in Wonderland, it should appear
+5% of the time in your randomly-generated book.
+
+
+def CheckForVerticalWinners(grid):
+  for y in range(max_y-max_y%CONSECUTIVE-1):
+      for x in range(max_x):
+          if grid[y][x] == grid[y+1][x] and grid[y][x] == grid[y+2][x]:
+            winners.add(grid[y][x])
+
+  return winners
