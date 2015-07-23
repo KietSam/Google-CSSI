@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="lib/game.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/game.css"/>
+
+  </head>
+
+  <body style="width: {{width * 50}}px">
+    <section id="game_layout">
+      {% for y in layout %}
+        {% for x in y %}
+          <div class="box"> <span class="box_text"> {{x}} </span> </div>
+        {% endfor %}
+      {% endfor %}
+    </section>
+  </body>
+</html>

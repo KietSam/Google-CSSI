@@ -1,0 +1,95 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+  color: white;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+}
+
+#bg {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+
+#my_img {
+  background-color: rgba(255, 255, 255, 0.6);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+#main {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+  margin-right: auto;
+  width: 700px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 50px;
+  opacity: 0;
+  display: none;
+}
+
+#startScreen {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 100vh;
+  text-shadow: 1px 1px 5px black;
+  width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 90px;
+  opacity: 0;
+  height: 50vh;
+}
+
+#name {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 75px;
+  text-decoration: underline;
+  display:block;
+}
+
+#favorite_group {
+  width: 640px;
+  height: 168px;
+}
+
+hr {
+  background: white;
+  margin:auto;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+.favorites {
+  text-align: center;
+  width: 320px;
+  height: auto;
+  float: right;
+}
+
+.links {
+  text-align: center;
+  height: auto;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.links:hover {
+  text-align: center;
+  height: auto;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+ul {
+  padding-left: 0px;
+  list-style-type: none;
+}

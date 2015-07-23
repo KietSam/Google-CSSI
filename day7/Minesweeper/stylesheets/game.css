@@ -1,0 +1,24 @@
+body {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.box {
+  width: 46px;
+  height: 46px;
+  float: right;
+  text-align: center;
+  line-height: 46px;
+  vertical-align: middle;
+  border: 2px solid black;
+  background-color: #F4FF81;
+}
+
+.box_text {
+  font: ubuntu;
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

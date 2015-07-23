@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Response </title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+</head>
+
+<body>
+  <h1> Day of the Tour </h1>
+  <p> Dear Diary, </p>
+  <p> Today, my new <span class="replace"> {{ pluralnoun1 }} </span> and I went on the most <span class="replace"> {{ adjective }} </span> tour.
+    We started near the <span class="replace"> {{ location }} </span> and drove all around in a fancy
+    <span class="replace"> {{ vehicle }} </span>. We saw <span class="replace"> {{ location2 }} </span> and the country's first <span class="replace"> {{ worlds_first}} </span>.
+    My favorite part was when the <span class="replace"> {{ vehicle }} </span> turned into a <span class="replace"> {{ second_vehicle }} </span> and we went into the
+    <span class="replace"> {{ location3 }} </span>. What a <span class="replace"> {{ adjective2 }} </span> day! </p>
+
+  <p> My team {{ team_members }}</p>
+  <ul>
+    {% for name in team_members: %}
+      <li> {{ name }}, {{ team_members[name]["college"] }} </li>
+    {% endfor %}
+  </ul>
+
+  <img src="http://s3.amazonaws.com/media.wbur.org/wordpress/15/files/2012/07/duckboat-620x412.jpg"/>
+</body>
+
+</html>

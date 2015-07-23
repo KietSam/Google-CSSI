@@ -1,0 +1,8 @@
+<ul>
+  {% for student in student_data %}
+    <li> Name: {{ student.name }} </li>
+    <li> School: {{ student.school }} </li>
+    <li> <a href="/student/view?student_id={{student.key.id()}}"> More details...</a></li>
+    <br/>
+  {% endfor %}
+</ul>

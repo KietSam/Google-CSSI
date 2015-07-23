@@ -1,0 +1,25 @@
+body {
+  text-align: center;
+  width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: ubuntu;
+}
+
+ul {
+  list-style-position: inside;
+  padding: 0px;
+}
+
+img {
+  width: inherit;
+}
+
+h1 {
+  font-family: ubuntu;
+  font-size: 3em;
+}
+
+.replace {
+  font-weight: bold;
+}
