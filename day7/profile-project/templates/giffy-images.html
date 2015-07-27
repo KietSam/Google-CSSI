@@ -7,8 +7,10 @@
   <body>
     <h1> {{ terms }} </h1>
     <form action="/giffy"> <input type="submit" value="Go Back"> </form>
+    <div id="container">
     {% for photo_url in url%}
       <img src={{photo_url}}> </img>
     {% endfor %}
+    </div>
   </body>
 </html>

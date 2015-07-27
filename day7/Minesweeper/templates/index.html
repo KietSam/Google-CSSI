@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="lib/game.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/jquery.color.js"></script>
+    <script src="lib/game.js"> </script>
     <link rel="stylesheet" type="text/css" href="/stylesheets/game.css"/>
-
+    <title> Minesweeper </title>
   </head>
 
-  <body style="width: {{width * 50}}px">
+  <body>
+    <div id="container">
+      <div id="title"> MINESWEEPER v1.0 7/26/2015 </div>
+    </div>
     <section id="game_layout">
-      {% for y in layout %}
-        {% for x in y %}
-          <div class="box"> <span class="box_text"> {{x}} </span> </div>
-        {% endfor %}
-      {% endfor %}
     </section>
+
   </body>
 </html>

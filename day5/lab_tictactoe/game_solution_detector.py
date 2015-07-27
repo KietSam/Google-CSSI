@@ -50,6 +50,7 @@ def CheckForHorizontalWinners(grid):
     for x in range(max_x):
         counterHorizontal = 0
         counterVertical = 0
+        counterDiagonal = 0 #/
         for z in range(CONSECUTIVE):
             if (x+z) < max_x:
                 if grid[y][x] == grid[y][x+z]:
@@ -57,23 +58,12 @@ def CheckForHorizontalWinners(grid):
             if (y+z) < max_y:
                 if grid[y][x] == grid[y+z][x]:
                     counterVertical+=1
+            if 
         if counterHorizontal == CONSECUTIVE or counterVertical == CONSECUTIVE:
             winners.add(grid[y][x])
   return winners
 
 def CheckForDiagonalWinners(grid):
-  """Returns a set of any diagonal winners of the grid.
-
-  Remember that there are many diagonals on any grid.
-
-    01
-     01  <-- both 0 and 1 got a diagonal of size 3
-      01
-
-  Don't forget diagonals in both directions: / and \
-
-  This is the hardest of the three checks, so DO THIS ONE LAST.
-  """
 
   ##### INSERT YOUR CODE HERE #####
   # max_x is the size of the grid's x-axis: how wide the grid is
@@ -81,12 +71,12 @@ def CheckForDiagonalWinners(grid):
   # max_y is the size of the grid's y-axis: how tall the grid is.
   max_y = len(grid)
   winners = set()
-  for y in range(max_y-max_y%CONSECUTIVE-1):
+  for y in range(max_y-max_y%CONSECUTIVE-1): #\
       for x in range(max_x - (max_x%CONSECUTIVE)-1):
           if grid[y][x] == grid[y+1][x+1] and grid[y][x] == grid[y+2][x+2]:
               winners.add(grid[y][x])
 
-  for y in range(max_y-max_y%CONSECUTIVE-1):
+  for y in range(max_y-max_y%CONSECUTIVE-1): #/
     for x in range(max_x - (max_x%CONSECUTIVE)-1):
         if grid[y][max_x-x-1] == grid[y+1][max_x-x-2] and grid[y][max_x-x-1] == grid[y+2][max_x-x-3]:
             winners.add(grid[y][max_x-x-1])

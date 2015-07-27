@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.onload = function() {
+      var startPos;
+      var geoSuccess = function(position) {
+        startPos = position;
+        document.getElementById('startLat').value = startPos.coords.latitude;
+        document.getElementById('startLon').value = startPos.coords.longitude;
+        document.getElementById("hiddenTemp").submit();
+      };
+      var geoError = function(position) {
+        console.log('Error occurred. Error code: ' + error.code);
+        //47.649017099999995
+        //-122.3504191
+      };
+      navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+    };
+  </script>
+</head>
+
+<body>
+  <h1> The temperature in {{ city }} is {{temperature}}&deg; Fahrenheit </h1>
+  {% if form %}
+  <form action="/weather" method="GET" id="hiddenTemp">
+    <input type="hidden" name="lat" value="" id='startLat'> </input>
+    <input type="hidden" name="lon" value="" id='startLon'> </input>
+  </form>
+  {% endif %}
+</body>
+
+</html>

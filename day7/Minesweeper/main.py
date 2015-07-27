@@ -23,7 +23,7 @@ import random
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         main = jinja_environment.get_template("templates/index.html")
-        self.response.write(main.render(create_layout(100,100,200)))
+        self.response.write(main.render())
 
 def create_layout (width, height, bombs):
     if bombs > (width * height):

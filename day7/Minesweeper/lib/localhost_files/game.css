@@ -1,0 +1,43 @@
+body {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#title {
+  font-size: 10vh;
+  font-family: "Ubuntu";
+  text-shadow: 1px 1px 1px black;
+  color: #E3F2FD;
+}
+
+#game_layout {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #82B1FF;
+  box-sizing: content-box;
+}
+
+.box {
+  width: 50px;
+  height: 50px;
+  float: left;
+  text-align: center;
+  line-height: 46px;
+  border: 2px solid #90CAF9;
+  vertical-align: middle;
+  background-color: #2962FF; /*Blue700*/
+  box-sizing: border-box;
+
+  font-family: "Ubuntu";
+  font-size: 25px;
+  color: white;
+  text-shadow: 0px 0px 10px #2962FF;
+}
+
+.box_text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}

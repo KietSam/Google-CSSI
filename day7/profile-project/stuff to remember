@@ -1,0 +1,12 @@
+API KEY - a11583e7986c5d6581f602edac408a93
+
+api.openweathermap.org/data/2.5/forecast/city?id=524901
+
+&APPID=a11583e7986c5d6581f602edac408a93
+
+api.openweathermap.org/data/2.5/weather?q={city name}
+
+http://api.openweathermap.org/data/2.5/weather?lat=47.649017099999995&lon=-122.3504191
+
+lat = "47.649017099999995"
+lon = "-122.3504191"
