@@ -1,6 +1,0 @@
-/*!CK:2999303900!*//*1434665055,*/
-
-if (self.CavalryLogger) { CavalryLogger.start_js(["9NMiz"]); }
-
-__d("legacy:control-textarea",["TextAreaControl"],function(a,b,c,d){b.__markCompiled&&b.__markCompiled();a.TextAreaControl=b('TextAreaControl');},3);
-__d("VideoCTAButtonOverlay",["CSS","SubscriptionsHandler"],function(a,b,c,d,e,f,g,h){b.__markCompiled&&b.__markCompiled();function i(j,k){"use strict";this.$VideoCTAButtonOverlay0=j;this.$VideoCTAButtonOverlay1=k.buttonOverlayElement;this.$VideoCTAButtonOverlay2=new h();this.$VideoCTAButtonOverlay2.addSubscriptions(j.addListener('beginPlayback',function(){return this.$VideoCTAButtonOverlay3();}.bind(this)),j.addListener('pausePlayback',function(){return this.$VideoCTAButtonOverlay4();}.bind(this)),j.addListener('finishPlayback',function(){return this.$VideoCTAButtonOverlay4();}.bind(this)));}i.prototype.$VideoCTAButtonOverlay3=function(){"use strict";g.show(this.$VideoCTAButtonOverlay1);};i.prototype.$VideoCTAButtonOverlay4=function(){"use strict";g.hide(this.$VideoCTAButtonOverlay1);};e.exports=i;},null);

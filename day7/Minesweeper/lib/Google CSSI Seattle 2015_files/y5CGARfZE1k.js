@@ -1,5 +1,0 @@
-/*!CK:3473379544!*//*1437598863,*/
-
-if (self.CavalryLogger) { CavalryLogger.start_js(["uI61o"]); }
-
-__d("AdBlockerDetectorLogging",["Banzai","ErrorUtils","getElementPosition"],function(a,b,c,d,e,f,g,h,i){b.__markCompiled&&b.__markCompiled();var j={doAdBlockCheck:function(k,l){h.applyWithGuard(function(){this._doAdBlockImgCheck(k,l,0);}.bind(this),this);},_doAdBlockImgCheck:function(k,l,m){if(!l||!k)return;var n=k.querySelectorAll('img');if(n.length>0){var o=false;for(var p=0;p<n.length;p++){var q=n[p],r=i(q);if(r.width>0||r.height>0){o=true;break;}}if(!o){var s=k,t=0;while(s!==null){if(t++>50)break;if(s.classList.contains('hidden_elem')||s.classList.contains('holdoutAdStory')||s.classList.contains('ego_ads_holdout'))return;s=s.parentElement;}g.post('xtrackable:blocked_ad_view',{token:l});}}else if(n.length===0&&l.startsWith('7.'))if(++m<5)setTimeout((function(){this._doAdBlockImgCheck(k,l,m);}.bind(this)).bind(this),2500);}};e.exports=j;},null);

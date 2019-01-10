@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<!-- saved from url=(0108)http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine -->
+<html itemscope="" itemtype="http://schema.org/QAPage"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>How to include third party Python libraries in Google App Engine? - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=6cd6089ee7f6">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" itemprop="image primaryImageOfPage" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=ea71a5211a91&amp;a">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="How to include third party Python libraries in Google App Engine?">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="How to add third party python libraries in Google App Engine, which are not provided by Google? I am trying  to use BeautifulSoup in Google App Engine and unable to do so. But my question is for any ">
+    <meta property="og:url" content="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine">
+    <link rel="canonical" href="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/How to include third party Python libraries in Google App Engine_ - Stack Overflow.html">
+
+    
+    
+    <script type="text/javascript" async="" src="http://engine.adzerk.net/ados?t=1438040332342&request={%22Placements%22:[{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1155206406%22,%22AT%22:4,%22Z%22:43},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1946087633%22,%22AT%22:4,%22Z%22:44},{%22A%22:22,%22S%22:8277,%22D%22:%22adzerk1134169302%22,%22ATA%22:[17,2221],%22Z%22:45}],%22Keywords%22:%22python%2Cgoogle-app-engine%22,%22Referrer%22:%22https%3A%2F%2Fwww.google.com%2F%22,%22IsAsync%22:true}"></script><script async="" src="http://edge.quantserve.com/quant.js"></script><script async="" src="http://b.scorecardresearch.com/beacon.js"></script><script async="" src="http://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/ados.js"></script><script src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/all.css">
+
+            <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;How to include third party Python libraries in Google App Engine?&#39;" href="http://stackoverflow.com/feeds/question/14850853">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+        
+            StackExchange.ready(function () {
+                    
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+                
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:0,shownCommentCount:0,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:14850853});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('1', '14850853');
+                                                                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+            });
+        </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1438040331,"networkMetaHostname":"meta.stackexchange.com","routeName":"Questions/Show","styleCode":true,"enableUserHovercards":true,"snippets":{"enabled":true,"domain":"stacksnippets.net"},"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"insertSpaceAfterNameTabCompletion":false,"globalAuthDisabled":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"871e9f59199d5a809e3221b063f130c4","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"d2bae48f121e","js/moderator.en.js":"77fc19a94e00","js/full-anon.en.js":"e791700066bc","js/full.en.js":"e0164f123b44","js/wmd.en.js":"38e50b1172de","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"51c765a57f00","js/help.en.js":"f00091de0a13","js/tageditor.en.js":"9c54855bf167","js/tageditornew.en.js":"41a2f30d6514","js/inline-tag-editing.en.js":"de80429b1816","js/revisions.en.js":"6aca57a6c709","js/review.en.js":"119b4c3da932","js/tagsuggestions.en.js":"b278f9a0b23b","js/post-validation.en.js":"77e562a4bf57","js/explore-qlist.en.js":"086dd31dbb75","js/events.en.js":"834e6db26888","js/keyboard-shortcuts.en.js":"db1ed1b3ef4d","js/external-editor.en.js":"e5f3f3dc7900","js/external-editor.en.js":"e5f3f3dc7900","js/snippet-javascript.en.js":"5cbd2e5c21c6","js/snippet-javascript-codemirror.en.js":"73b3ab77d4a6"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+    
+    
+<style>div[id^="adzerk"],
+.hireme,
+#header + #content > #left > #rlblock_left,
+#content > #right > .dose > .dosesingle,
+#content > #center > .dose > .dosesingle,
+.adlink,
+.ad-button,
+.ad-footer,
+.ad-body,
+.ad-header
+{display:none !important;}</style><style>img[src="http://static.adzerk.net/Advertisers/7fcccaae8acb4e2e84bb7ea421d299ce.jpg"],
+img[src="http://static.adzerk.net/Advertisers/a8ce8aa74c5c4ba58348a53791428306.png"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTIxLCJjaCI6MTE3OCwiY3IiOjI2ODgsImRpIjoiODViYTFlZDUxMWVkNGQ5OWJmZDdkN2ZmMTY0ZDkzZmMiLCJkbSI6MSwiZmMiOjI0ODUsImZsIjoyNjYzLCJpcCI6IjIxNi4yMzkuNTUuMTM2Iiwia3ciOiJweXRob24sZ29vZ2xlLWFwcC1lbmdpbmUsaHRtbDUsdXBsb2FkIiwibnciOjIyLCJwYyI6MCwicHIiOjYxNzM3LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NSwidHMiOjE0MzgwMzc2NjAzMDQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE0MzE2NDU2NDEifQ&s=3e2GLTU0P9PsVJHvMUXr4LkodwE"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NTMyLCJkaSI6IjVlN2ZjZDdjOTRmMzRmNjU5ZGU4NmIxYTJjNjlhYWY5IiwiZG0iOjEsImZjIjo3MjE1MzAsImZsIjo0NDEzMzQsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixweXRob24taW1wb3J0IiwibnciOjIyLCJwYyI6MCwicHIiOjE1NjgsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWU4NWI4NWQ3YmZiMTQzZjhiMzdlNDkwMGZjMjE2NDViIiwiem4iOjQzLCJ0cyI6MTQzODAzODkxMTU3MCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTUyMjQ1MzAwMCJ9&s=lrmivJZag_wJ7fNUgrB1WsDBDZM"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6NTc4ODAsImNoIjoxMTc4LCJjciI6NDA1MTE4LCJkaSI6IjJhZjIwZTRiNDJmMTQwZmRiOWJhYmU0MDVmN2ZhZDNlIiwiZG0iOjEsImZjIjo0OTE4MTEsImZsIjoxMDM3OTIsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixweXRob24taW1wb3J0IiwibnciOjIyLCJwYyI6MCwicHIiOjE2MDQsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWU4NWI4NWQ3YmZiMTQzZjhiMzdlNDkwMGZjMjE2NDViIiwiem4iOjQ1LCJ0cyI6MTQzODAzODkxMTU3MiwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTI0NDg5NDUyNyJ9&s=Fl0Ib-ZGBo-Z_J2hi2iQz_tu4SE"],
+img[src="http://static.adzerk.net/Advertisers/3a8705e82f3348b4a9bfcfb7fdaadb9f.png"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NjA3ODcsImF0Ijo0LCJidCI6MCwiY20iOjI3MjIzNywiY2giOjExNzgsImNyIjo5MzAyNDcsImRpIjoiZjViMmE4MjY1ODJmNDdkZjgzMjFhYTU5YmE2MzVmYWUiLCJkbSI6MSwiZmMiOjk3ODkxMCwiZmwiOjY0ODQ0OSwiaXAiOiIyMTYuMjM5LjU1LjEzNiIsImt3IjoicHl0aG9uLHdpbmRvd3MsZ29vZ2xlLWFwcC1lbmdpbmUsZ29vZ2xlLWNsb3VkLXBsYXRmb3JtLGdjbG91ZCIsIm1rIjoicHl0aG9uIiwibnciOjIyLCJwYyI6Ny41LCJwciI6NzY1LCJydCI6MiwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0MywidHMiOjE0MzgwMzg5NTUwNjYsImJmIjp0cnVlLCJwbiI6ImFkemVyazIwNzQ5NDYwNDkifQ&s=j_ubg0NqsaGHfswAbma3C_-DF7w"],
+img[src="http://static.adzerk.net/Advertisers/238373b7fcbe439d9585217a8e0f14ba.jpg"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6Mzk3MzMsImF0Ijo0LCJidCI6MCwiY20iOjI0OTY0MSwiY2giOjExNzgsImNyIjo4NjY5MDcsImRpIjoiZmY0MjJkNjhhYzMxNDk4ZWE5ZDAwYzc1ZDhkZTI0YTYiLCJkbSI6MSwiZmMiOjkwODkwMywiZmwiOjU5MTY5OSwiaXAiOiIyMTYuMjM5LjU1LjEzNiIsImt3IjoicHl0aG9uLHdpbmRvd3MsZ29vZ2xlLWFwcC1lbmdpbmUsZ29vZ2xlLWNsb3VkLXBsYXRmb3JtLGdjbG91ZCIsIm1rIjoicHl0aG9uIiwibnciOjIyLCJwYyI6NSwicHIiOjc2NSwicnQiOjIsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtZTg1Yjg1ZDdiZmIxNDNmOGIzN2U0OTAwZmMyMTY0NWIiLCJ6biI6NDQsInRzIjoxNDM4MDM4OTU1MDY5LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMzczNjI3ODkzIn0&s=D5JnTiXYX7PPXrAV0f-9QH8ycrk"],
+img[src="http://static.adzerk.net/Advertisers/6cbe7878dabc47809c6bbb7c46d7e69e.png"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NjA3ODcsImF0IjoxNywiYnQiOjAsImNtIjoyNzIyMzcsImNoIjoxMTc4LCJjciI6OTMwMjQyLCJkaSI6ImFmMmQ1YmVlNTUwMDQ1MjVhNGY0MTJkYzE0YzBmOThjIiwiZG0iOjEsImZjIjo5Nzg5MDUsImZsIjo2NDg0NDcsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbix3aW5kb3dzLGdvb2dsZS1hcHAtZW5naW5lLGdvb2dsZS1jbG91ZC1wbGF0Zm9ybSxnY2xvdWQiLCJtayI6Imdvb2dsZS1jbG91ZC1wbGF0Zm9ybSIsIm53IjoyMiwicGMiOjYsInByIjo3NjUsInJ0IjoyLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWU4NWI4NWQ3YmZiMTQzZjhiMzdlNDkwMGZjMjE2NDViIiwiem4iOjQ1LCJ0cyI6MTQzODAzODk1NTA3MSwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTAwNDI4MDUwNSJ9&s=CwHvBqOvCoz6qQOZZki_F4M601w"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NTMyLCJkaSI6IjMzZmJkMzJlNTQwZTQxNzhiZDQ5MTc2OTRmMzg1YjJjIiwiZG0iOjEsImZjIjo3MjE1MzAsImZsIjo0NDEzMzQsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixmbGFzayIsIm53IjoyMiwicGMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0MywidHMiOjE0MzgwMzkzNzUxMTUsImJmIjp0cnVlLCJwbiI6ImFkemVyazY0MTM3MjU0NSJ9&s=MpA3rieSqlMSY4gnnmxREEuut8E"],
+img[src="http://static.adzerk.net/Advertisers/831a088cf67e42c580e407e2d91c8ce6.jpg"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NzM5LCJkaSI6IjUxM2ZlOTg1ZDM4MjQxMzY4YmFlNDNjNWMyOTFhYjc2IiwiZG0iOjEsImZjIjo3MjE4MzMsImZsIjo0MzE3ODAsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixmbGFzayIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NCwidHMiOjE0MzgwMzkzNzUxMTcsImJmIjp0cnVlLCJwbiI6ImFkemVyazI2MDQyOTI1MSJ9&s=9W2xzHTzthtLtU3CAINxB6Dehi4"],
+img[src="http://static.adzerk.net/Advertisers/c050fce5e0094decb57fdb53f4ca4254.jpg"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6MTg2NjI0LCJjaCI6MTE3OCwiY3IiOjY1ODAyNCwiZGkiOiIwYTgyNjUxZWViNjA0YzJkODk0YjMyZmQwNTNkMzJjOSIsImRtIjoxLCJmYyI6Njc5NTAwLCJmbCI6NDEwMTgzLCJpcCI6IjIxNi4yMzkuNTUuMTM2Iiwia3ciOiJweXRob24sZmxhc2siLCJudyI6MjIsInBjIjowLCJwciI6MTU2OCwicnQiOjEsInJmIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJzdCI6ODI3NywidWsiOiJ1ZTEtZTg1Yjg1ZDdiZmIxNDNmOGIzN2U0OTAwZmMyMTY0NWIiLCJ6biI6NDUsInRzIjoxNDM4MDM5Mzc1MTE5LCJiZiI6dHJ1ZSwicG4iOiJhZHplcmsxMDk4MTk2MTE5In0&s=7y6kg7tIRJGLRKohBCUk26JtBBQ"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NzE1LCJkaSI6IjkzZjY2YWE1ZjI2NzRlNzA4ZDMxMjAzYzA1NDM4MzIxIiwiZG0iOjEsImZjIjo3MjE4MDksImZsIjo0MzE3ODAsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixmbGFzayIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0MywidHMiOjE0MzgwMzk0MDkzNDEsImJmIjp0cnVlLCJwbiI6ImFkemVyazY0MTM3MjU0NSJ9&s=MxZ8ivwt0y-ycYGj6vOBmdtpArc"],
+img[src="http://static.adzerk.net/Advertisers/7b03b9d327834757b98b657002b37789.png"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njg0Mjk4LCJkaSI6IjQ3YTgyZTNkNDM4MzQ0MWU5OTRhN2ZhNGRhMzY2ZTNmIiwiZG0iOjEsImZjIjo3MDg0NTIsImZsIjo0MzE3ODAsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixmbGFzayIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NCwidHMiOjE0MzgwMzk0MDkzNDMsImJmIjp0cnVlLCJwbiI6ImFkemVyazI2MDQyOTI1MSJ9&s=D3cucPHXE8FkYCiN9aZRIFu4Nwo"],
+img[src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6OTIxLCJjaCI6MTE3OCwiY3IiOjI2ODgsImRpIjoiNGE5MTE4OWFiNTVmNGYyYjk3MzFjZDY3Njk5ZTY0NzkiLCJkbSI6MSwiZmMiOjI0ODUsImZsIjoyNjYzLCJpcCI6IjIxNi4yMzkuNTUuMTM2Iiwia3ciOiJweXRob24sZmxhc2siLCJudyI6MjIsInBjIjowLCJwciI6NjE3MzcsInJ0IjoxLCJyZiI6Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vIiwic3QiOjgyNzcsInVrIjoidWUxLWU4NWI4NWQ3YmZiMTQzZjhiMzdlNDkwMGZjMjE2NDViIiwiem4iOjQ1LCJ0cyI6MTQzODAzOTQwOTM0NCwiYmYiOnRydWUsInBuIjoiYWR6ZXJrMTA5ODE5NjExOSJ9&s=LuNeRs_kww6VqDggz9PAeblYg48"]
+{display:none !important;}</style><script async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/snippet-javascript.en.js"></script><script async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/post-validation.en.js"></script><script async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/prettify-full.en.js"></script><script async="" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/external-editor.en.js"></script><script type="text/javascript" src="http://static.adzerk.net/Extensions/adFeedback.js"></script><link rel="stylesheet" href="http://static.adzerk.net/Extensions/adFeedback.css"><link type="text/css" rel="stylesheet" href="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/jobs.min.css"></head>
+<body class="question-page new-topbar">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+
+
+
+<div class="topbar">
+    <div class="topbar-wrapper">
+
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link js-gps-track" href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=multicollider" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Stack Overflow Careers
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+<a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a> or <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a> to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 149 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+
+        </div>
+
+        <div class="topbar-links">
+
+                <div class="links-container">
+                <span class="topbar-menu-links">
+                                <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine" class="login-link">sign up</a>
+                                <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine" class="login-link">log in</a>
+
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                            <a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/?utm_source=stackoverflow.com&utm_medium=site-ui&utm_campaign=anon-topbar">stack overflow careers</a>
+                    </span>
+                </div>
+
+            <div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+    <script>
+        StackExchange.ready(function() { StackExchange.topbar.init(); });
+    </script>
+
+    <div class="container">
+        <div id="header">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content" class="snippet-hidden">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=41f6e13ade69">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/", expires: 365 });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+                <h1 itemprop="name"><a href="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/How to include third party Python libraries in Google App Engine_ - Stack Overflow.html" class="question-hyperlink">How to include third party Python libraries in Google App Engine?</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="14850853" id="question">
+
+    <script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1155206406",4).setZone(43); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1155206406" style="display: none !important;"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1ODk1LCJkaSI6IjhiZDRhOWQ1ZjMxOTQ1MWQ5MjdkMjEzMDdlNWZmMGI3IiwiZG0iOjEsImZjIjo3MjIwNDAsImZsIjo0NDEzMzQsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0MywidHMiOjE0MzgwNDAzMzI2NjIsImJmIjp0cnVlLCJwbiI6ImFkemVyazExNTUyMDY0MDYiLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tL2N2L2dldC1vbmU_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWFkJnV0bV9jYW1wYWlnbj1jYW5kaWRhdGVzLWFkZC1jdiZ1dG1fY29udGVudD1sYi1sYXVuY2gteW91cnNlbGYifQ&s=W-uG_kgFaP85Z_E4CrouSJQKZv0" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/1e4cf280c488456491eb767a40de5d4c.png" title="" alt="" border="0" width="728" height="90" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1ODk1LCJkaSI6IjhiZDRhOWQ1ZjMxOTQ1MWQ5MjdkMjEzMDdlNWZmMGI3IiwiZG0iOjEsImZjIjo3MjIwNDAsImZsIjo0NDEzMzQsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNTY4LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0MywidHMiOjE0MzgwNDAzMzI2NjMsImJmIjp0cnVlLCJwbiI6ImFkemVyazExNTUyMDY0MDYifQ&s=wEcLFWJaAW9irID3nL--IqYjSRc"></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14850853">
+        <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">20</span>
+        <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+
+        <a class="star-off" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" title="This is a favorite question (click again to undo)">favorite</a>
+        <div class="favoritecount"><b>13</b></div>
+
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+<p>How to add third party python libraries in Google App Engine, which are not provided by Google? I am trying  to use BeautifulSoup in Google App Engine and unable to do so. But my question is for any library I want to use in Google App Engine.</p>
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag js-gps-track" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/google-app-engine" class="post-tag js-gps-track" title="show questions tagged &#39;google-app-engine&#39;" rel="tag"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/vobok.png" height="16" width="18" alt="" class="sponsor-tag-img">google-app-engine</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/14850853" title="short permalink to this question" class="short-link" id="link-post-14850853">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14850853/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/14850853/revisions" title="show all edits to this post">edited <span title="2014-05-05 22:10:26Z" class="relativetime">May 5 '14 at 22:10</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/8418/lipis"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/a8518c33a76987dd41dd26497563fee9" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/8418/lipis">Lipis</a><br>
+        <span class="reputation-score" title="reputation score 11178" dir="ltr">11.2k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="83 bronze badges"><span class="badge3"></span><span class="badgecount">83</span></span>
+    </div>
+</div>    </td>
+    <td class="post-signature owner">
+        <div class="user-info ">
+    <div class="user-action-time">
+        asked <span title="2013-02-13 10:01:49Z" class="relativetime">Feb 13 '13 at 10:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1823389/moazzam-khan"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/4aa365727bb22cb9f27b9250a0d1b55c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1823389/moazzam-khan">Moazzam Khan</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,700</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14850853" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14850853" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>        </tbody></table>
+</div>
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								5 Answers
+                                <span style="display:none;" itemprop="answerCount">5</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine?answertab=active#tab-top" data-nav-xhref="" title="Answers with the latest activity first" data-value="active">active</a>
+        <a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine?answertab=oldest#tab-top" data-nav-xhref="" title="Answers in the order they were provided" data-value="oldest">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine?answertab=votes#tab-top" data-nav-xhref="" title="Answers with the highest score first" data-value="votes">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="14851686"></a>
+<div id="answer-14851686" class="answer accepted-answer" data-answerid="14851686" itemscope="" itemtype="http://schema.org/Answer" itemprop="acceptedAnswer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14851686">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">36</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+        <span class="vote-accepted-on load-accepted-answer-date" title="loading when this answer was accepted...">accepted</span>
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Actually I think <a href="http://stackoverflow.com/a/14648038/8418">this answer</a> fits better here. </p>
+
+<p>If you want to use 3rd party libraries that are not included in <a href="http://stackoverflow.com/a/14648038/8418">this list</a>, then you'll have to add them manually.</p>
+
+<p>In order to include manually any other library you have to have them inside the directory where the <code>app.yaml</code> lives. So for example if you have the following structure:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="pln">hello
+</span><span class="pun">├──</span><span class="pln"> libs
+</span><span class="pun">│</span><span class="pln">   </span><span class="pun">└──</span><span class="pln"> bs4 
+</span><span class="pun">├──</span><span class="pln"> hello</span><span class="pun">.</span><span class="pln">py 
+</span><span class="pun">└──</span><span class="pln"> app</span><span class="pun">.</span><span class="pln">yaml</span></code></pre>
+
+<p>then in your <code>hello.py</code> you have to put these two lines in the beginning of the file:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> sys
+sys</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">insert</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="str">'libs'</span><span class="pun">)</span></code></pre>
+
+<p>After doing that you'll be able to use any 3rd party library that you're going to put in that <code>libs</code> directory. </p>
+
+<p>For example:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">from</span><span class="pln"> bs4 </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">BeautifulSoup</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/14851686" title="short permalink to this answer" class="short-link" id="link-post-14851686">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14851686/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/14851686/revisions" title="show all edits to this post">edited <span title="2013-07-18 21:23:19Z" class="relativetime">Jul 18 '13 at 21:23</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-13 10:44:17Z" class="relativetime">Feb 13 '13 at 10:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/8418/lipis"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/a8518c33a76987dd41dd26497563fee9" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/8418/lipis">Lipis</a><br>
+        <span class="reputation-score" title="reputation score 11178" dir="ltr">11.2k</span><span title="12 gold badges"><span class="badge1"></span><span class="badgecount">12</span></span><span title="48 silver badges"><span class="badge2"></span><span class="badgecount">48</span></span><span title="83 bronze badges"><span class="badge3"></span><span class="badgecount">83</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14851686" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-20815606" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Cant get it working after moving it to libs</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1823389/moazzam-khan" title="1700 reputation" class="comment-user owner">Moazzam Khan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment20815606_14851686"><span title="2013-02-13 10:59:10Z" class="relativetime-clean">Feb 13 '13 at 10:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-20817339" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">My bad,  finally got it working. Thanks</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1823389/moazzam-khan" title="1700 reputation" class="comment-user owner">Moazzam Khan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment20817339_14851686"><span title="2013-02-13 11:59:39Z" class="relativetime-clean">Feb 13 '13 at 11:59</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-38761830" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I am still having problems with this after following the directions. Has anything changed with GAE?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1860768/ann-kilzer" title="362 reputation" class="comment-user">Ann Kilzer</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment38761830_14851686"><span title="2014-07-24 19:15:15Z" class="relativetime-clean">Jul 24 '14 at 19:15</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-38764393" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@AnnKilzer Nothing has changed as far as I know.. it should just work..</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/8418/lipis" title="11178 reputation" class="comment-user">Lipis</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment38764393_14851686"><span title="2014-07-24 20:30:00Z" class="relativetime-clean">Jul 24 '14 at 20:30</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14851686" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1946087633",4).setZone(44); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1946087633" style="display: none !important;"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NzM3LCJkaSI6ImRjOGMzYmVkNWQyMzQzNDNhMTEwM2VmNzU3Zjk0MWQ5IiwiZG0iOjEsImZjIjo3MjE4MzEsImZsIjo0MzE3ODAsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NCwidHMiOjE0MzgwNDAzMzI2NjQsImJmIjp0cnVlLCJwbiI6ImFkemVyazE5NDYwODc2MzMiLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tL2pvYnMvcmVtb3RlP3V0bV9zb3VyY2U9c3RhY2tvdmVyZmxvdy5jb20mdXRtX21lZGl1bT1hZCZ1dG1fY2FtcGFpZ249Y2FuZGlkYXRlcy13ZmgmdXRtX2NvbnRlbnQ9bGItd2ZoLWFueXdoZXJlfiJ9&s=V0Zst-RdW4KLG1c-cWYIch432go" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/ed3b3bbfd4364176bfd1feb8506577ed.jpg" title="" alt="" border="0" width="728" height="90" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6NCwiYnQiOjAsImNtIjoxODY2MjQsImNoIjoxMTc4LCJjciI6Njk1NzM3LCJkaSI6ImRjOGMzYmVkNWQyMzQzNDNhMTEwM2VmNzU3Zjk0MWQ5IiwiZG0iOjEsImZjIjo3MjE4MzEsImZsIjo0MzE3ODAsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NCwidHMiOjE0MzgwNDAzMzI2NjUsImJmIjp0cnVlLCJwbiI6ImFkemVyazE5NDYwODc2MzMifQ&s=sJLQeCjfO1VC5oW-v7v7XA8UMes"></div>
+  
+<a name="29681061"></a>
+<div id="answer-29681061" class="answer" data-answerid="29681061" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="29681061">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Google has provided a documented way for included third-party libraries in your GAE project.</p>
+
+<p>Check out the "Vendoring Third-party Packages" section of the <a href="https://cloud.google.com/appengine/docs/python/tools/libraries27" rel="nofollow">Libraries in Python 2.7</a> docs.</p>
+
+<blockquote>
+  <p>If you want to include additional pure-python third-party packages, you can do so by setting up vendoring. Vendoring allows you to install packages to a subdirectory of your project and include them in your code. To use vendoring, create (or modify) <strong>appengine_config.py</strong> in the root of your project.  </p>
+</blockquote>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">from</span><span class="pln"> google</span><span class="pun">.</span><span class="pln">appengine</span><span class="pun">.</span><span class="pln">ext </span><span class="kwd">import</span><span class="pln"> vendor
+</span><span class="com"># Add any libraries installed in the "lib" folder.</span><span class="pln">
+vendor</span><span class="pun">.</span><span class="pln">add</span><span class="pun">(</span><span class="str">'lib'</span><span class="pun">)</span></code></pre>
+
+<p>And then just put all your libs' source code in your <code>lib</code> dir</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="pln">project
+</span><span class="pun">-</span><span class="pln"> lib
+  </span><span class="pun">-</span><span class="pln"> bs4
+</span><span class="pun">-</span><span class="pln"> your_code</span><span class="pun">.</span><span class="pln">py</span></code></pre>
+
+<p>You can also easily install everything from a requirements.txt file by doing the following command</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="pln">pip install </span><span class="pun">-</span><span class="pln">t lib </span><span class="pun">-</span><span class="pln">r requirements</span><span class="pun">.</span><span class="pln">txt</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/29681061" title="short permalink to this answer" class="short-link" id="link-post-29681061">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/29681061/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/29681061/revisions" title="show all edits to this post">edited <span title="2015-07-21 11:52:44Z" class="relativetime">Jul 21 at 11:52</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/554903/jonathan"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/da1dcf15a57cb7c7d7a5cbe9dbe83993" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/554903/jonathan">Jonathan</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,021</span><span title="9 silver badges"><span class="badge2"></span><span class="badgecount">9</span></span><span title="24 bronze badges"><span class="badge3"></span><span class="badgecount">24</span></span>
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2015-04-16 16:41:48Z" class="relativetime">Apr 16 at 16:41</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/346561/jesse-webb"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/mlG9J.jpg" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/346561/jesse-webb">Jesse Webb</a><br>
+        <span class="reputation-score" title="reputation score 10222" dir="ltr">10.2k</span><span title="6 gold badges"><span class="badge1"></span><span class="badgecount">6</span></span><span title="54 silver badges"><span class="badge2"></span><span class="badgecount">54</span></span><span title="84 bronze badges"><span class="badge3"></span><span class="badgecount">84</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-29681061" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-29681061" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="14850875"></a>
+<div id="answer-14850875" class="answer" data-answerid="14850875" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14850875">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>You simply copy the folder containing the library you want to use into your app engine project. </p>
+
+<p>Then when you deploy it's uploaded with your application and is available for use. </p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/14850875" title="short permalink to this answer" class="short-link" id="link-post-14850875">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14850875/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-13 10:02:42Z" class="relativetime">Feb 13 '13 at 10:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/1351600/paul-collingwood"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/e7a26ba42e4bfb97b7211b64d9f4f335" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/1351600/paul-collingwood">Paul Collingwood</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">7,576</span><span title="3 gold badges"><span class="badge1"></span><span class="badgecount">3</span></span><span title="10 silver badges"><span class="badge2"></span><span class="badgecount">10</span></span><span title="25 bronze badges"><span class="badge3"></span><span class="badgecount">25</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14850875" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14850875" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="21996251"></a>
+<div id="answer-21996251" class="answer" data-answerid="21996251" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="21996251">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>The way it worked here is:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">import</span><span class="pln"> sys
+</span><span class="com"># sys.path.insert(0, 'libs') #"Old" way, not working for me.</span><span class="pln">
+sys</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">append</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">join</span><span class="pun">(</span><span class="pln">os</span><span class="pun">.</span><span class="pln">path</span><span class="pun">.</span><span class="pln">dirname</span><span class="pun">(</span><span class="pln">__file__</span><span class="pun">),</span><span class="pln"> </span><span class="str">"libs"</span><span class="pun">))</span><span class="pln"> </span><span class="com"># This works!</span></code></pre>
+
+<p>Then import normally:</p>
+
+<pre class="lang-py prettyprint prettyprinted"><code><span class="kwd">from</span><span class="pln"> bs4 </span><span class="kwd">import</span><span class="pln"> </span><span class="typ">BeautifulSoup</span></code></pre>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/21996251" title="short permalink to this answer" class="short-link" id="link-post-21996251">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21996251/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2014-02-24 18:43:20Z" class="relativetime">Feb 24 '14 at 18:43</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/3029527/rafael-vogel"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/eb220b034d11cd18c03f65900a748354" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/3029527/rafael-vogel">Rafael Vogel</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">11</span><span title="1 bronze badge"><span class="badge3"></span><span class="badgecount">1</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21996251" class="comments  dno">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <tr><td></td><td></td></tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-21996251" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="14850874"></a>
+<div id="answer-14850874" class="answer" data-answerid="14850874" itemscope="" itemtype="http://schema.org/Answer">
+
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+        <input type="hidden" name="_id_" value="14850874">
+        <a class="vote-up-off" title="This answer is useful">up vote</a>
+        <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+        <a class="vote-down-off" title="This answer is not useful">down vote</a>
+
+
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+<p>Just put Beautifulsoup in the root of your project and upload it all</p>
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/14850874" title="short permalink to this answer" class="short-link" id="link-post-14850874">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/14850874/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2013-02-13 10:02:35Z" class="relativetime">Feb 13 '13 at 10:02</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/541842/f%c3%a1bio-diniz"><div class="gravatar-wrapper-32"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/8f7f40878fd90c71f8ec6abfcafeb20c" alt="" width="32" height="32"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/541842/f%c3%a1bio-diniz">Fábio Diniz</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">4,636</span><span title="18 silver badges"><span class="badge2"></span><span class="badgecount">18</span></span><span title="30 bronze badges"><span class="badge3"></span><span class="badgecount">30</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-14850874" class="comments ">
+		    <table>
+                <tbody data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+
+
+    <tr id="comment-20813948" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can i put it in some specific folder like - 'lib'?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1823389/moazzam-khan" title="1700 reputation" class="comment-user owner">Moazzam Khan</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment20813948_14850874"><span title="2013-02-13 10:04:46Z" class="relativetime-clean">Feb 13 '13 at 10:04</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-20816157" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">yes manipulate sys.path or use site module as in `site.addsitedir('lib')</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1201324/tim-hoffman" title="10778 reputation" class="comment-user">Tim Hoffman</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#comment20816157_14850874"><span title="2013-02-13 11:20:01Z" class="relativetime-clean">Feb 13 '13 at 11:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+                </tbody>
+		    </table>
+	    </div>
+
+        <div id="comments-link-14850874" data-rep="50" data-anon="true">
+
+                <a class="js-add-link comments-link disabled-link " title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add a comment</a><span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expand to show all comments on this post" href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" onclick=""></a>
+        </div>         
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/14850853/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="14850853">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                            <input type="hidden" name="referrer" value="https://www.google.com/">
+							<h2 class="space">Your Answer</h2>
+
+
+
+            <script>
+            StackExchange.ifUsing("editor", function () {
+                StackExchange.using("externalEditor", function () {
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.init();
+                    });
+                });
+            }, "code-snippets");
+        </script>
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+       
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.options.snippets.enabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            prepareEditor({
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                    onDemand: true,
+                    discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+                });
+                
+
+        }
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="871e9f59199d5a809e3221b063f130c4">
+        <input id="author" name="author" type="text">
+    </div>
+
+
+
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display: none; -webkit-user-select: auto;">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown">
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f14850853%2fhow-to-include-third-party-python-libraries-in-google-app-engine%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="email" size="30" maxlength="100" value="" tabindex="106" placeholder="required, but never shown" /&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110" style="-webkit-user-select: auto;">
+									<a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/python" class="post-tag" title="show questions tagged &#39;python&#39;" rel="tag">python</a> <a href="http://stackoverflow.com/questions/tagged/google-app-engine" class="post-tag" title="show questions tagged &#39;google-app-engine&#39;" rel="tag"><img src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/vobok.png" height="16" width="18" alt="" class="sponsor-tag-img">google-app-engine</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2013-02-13 10:01:49Z"><b>2 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>8203 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/14850853/how-to-include-third-party-python-libraries-in-google-app-engine?lastactivity" class="lastactivity-link" title="2015-07-21 11:52:44Z">6 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+						
+			<script>
+                var ados = ados || {}; ados.run = ados.run || [];
+                ados.run.push(function () { ados_add_placement(22,8277,"adzerk1134169302",[17,2221]).setZone(45); });
+            </script>
+            <div class="everyonelovesstackoverflow" id="adzerk1134169302" style="display: none !important;"><a href="http://engine.adzerk.net/r?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6NTc4ODAsImNoIjoxMTc4LCJjciI6NDA1MTE4LCJkaSI6IjhjMDExMTRhMmJmYTQ0ZmI5YzE0ZDBmOTIyYjU3YTc3IiwiZG0iOjEsImZjIjo0OTE4MTEsImZsIjoxMDM3OTIsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NSwidHMiOjE0MzgwNDAzMzI2NjcsImJmIjp0cnVlLCJwbiI6ImFkemVyazExMzQxNjkzMDIiLCJ1ciI6Imh0dHA6Ly9jYXJlZXJzLnN0YWNrb3ZlcmZsb3cuY29tL2NvbXBhbnkvc3RhY2stZXhjaGFuZ2U_dXRtX3NvdXJjZT1zdGFja292ZXJmbG93LmNvbSZ1dG1fbWVkaXVtPWhvdXNlJnV0bV9jYW1wYWlnbj13b3JrLWF0LXNlJnV0bV9jb250ZW50PXNiLWdldC1hLWdvb2IifQ&s=bZXr1DSfK9iy6MKUKBuf1_PmrjA" rel="nofollow" target="_blank" title=""><img src="http://static.adzerk.net/Advertisers/a8ce8aa74c5c4ba58348a53791428306.png" title="" alt="" border="0" width="220" height="250" style="display: none !important;"></a><img height="0px" width="0px" border="0" style="position: absolute; display: none !important;" src="http://engine.adzerk.net/i.gif?e=eyJhdiI6NDE0LCJhdCI6MTcsImJ0IjowLCJjbSI6NTc4ODAsImNoIjoxMTc4LCJjciI6NDA1MTE4LCJkaSI6IjhjMDExMTRhMmJmYTQ0ZmI5YzE0ZDBmOTIyYjU3YTc3IiwiZG0iOjEsImZjIjo0OTE4MTEsImZsIjoxMDM3OTIsImlwIjoiMjE2LjIzOS41NS4xMzYiLCJrdyI6InB5dGhvbixnb29nbGUtYXBwLWVuZ2luZSIsIm53IjoyMiwicGMiOjAsInByIjoxNjA0LCJydCI6MSwicmYiOiJodHRwczovL3d3dy5nb29nbGUuY29tLyIsInN0Ijo4Mjc3LCJ1ayI6InVlMS1lODViODVkN2JmYjE0M2Y4YjM3ZTQ5MDBmYzIxNjQ1YiIsInpuIjo0NSwidHMiOjE0MzgwNDAzMzI2NjgsImJmIjp0cnVlLCJwbiI6ImFkemVyazExMzQxNjkzMDIifQ&s=hlbFL6gX2V6V2_PfDppqn3qyyfM"></div>
+        <div id="hireme" class=" blue near-you tagged"><a href="http://careers.stackoverflow.com/jobs/location/San%20Francisco%2C%20California%2C%20United%20States" target="_blank" data-loc="San%20Francisco%2C%20California%2C%20United%20States" data-hf="h" class="top"> <span>Jobs near you</span></a><ul class="jobs"><li><a data-cid="179766" href="http://careers.stackoverflow.com/jobs/93783/full-stack-engineer-for-connected-buildings-lucid" target="_blank" title="Full Stack Engineer for Connected Buildings Movement at Lucid. Click to learn more.">Full Stack Engineer for Connected Buildings Movement<br><div class="company">Lucid</div><div class="location" title="Oakland, CA">Oakland, CA</div><span class="post-tag highlight">python</span><span class="post-tag">django</span></a></li><li><a data-cid="173658" href="http://careers.stackoverflow.com/jobs/87609/user-experience-engineer-wikimedia-foundation" target="_blank" title="User Experience Engineer at Wikimedia Foundation. Click to learn more.">User Experience Engineer<br><div class="company">Wikimedia Foundation</div><div class="location" title="San Francisco, CA / remote">San Francisco, CA / remote</div><span class="post-tag">javascript</span><span class="post-tag">css</span></a></li><li class="city"><a href="http://careers.stackoverflow.com/jobs/location/San%20Francisco%2C%20California%2C%20United%20States" target="_blank" data-hf="f" data-loc="San%20Francisco%2C%20California%2C%20United%20States">More jobs near San Francisco…</a></li></ul><img class="impression" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/i" style="display:none;"></div>
+			  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/14638262?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">11</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/14638262/python-2-7-how-to-use-beautifulsoup-in-google-app-engine?lq=1" class="question-hyperlink">Python 2.7 : How to use BeautifulSoup in Google App Engine?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/23482258?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23482258/how-to-use-bcrypt-on-google-app-engine-gae?lq=1" class="question-hyperlink">How to use bcrypt on Google App Engine (GAE)?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/23336706?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/23336706/python-and-google-app-engine-how-to-import-a-custom-module?lq=1" class="question-hyperlink">Python and Google App Engine: How to import a custom module?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/26438693?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26438693/how-to-make-working-python-project-with-python-m2crypto-in-google-app-engine?lq=1" class="question-hyperlink">How to make working python project with python-M2Crypto in Google App Engine?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/26765975?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">4</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/26765975/python-on-appengine-using-beautifulsoup-importerror-no-module-named-bs4?lq=1" class="question-hyperlink">Python on Appengine using BeautifulSoup ImportError: No module named bs4</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/15215409?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15215409/importerror-no-module-named-endpoints-proto-datastore-ndb?lq=1" class="question-hyperlink">ImportError: No module named endpoints_proto_datastore.ndb</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/15235575?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/15235575/struggling-with-imports-on-google-app-engine?lq=1" class="question-hyperlink">Struggling with imports on Google App Engine</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/22763165?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/22763165/is-it-possible-to-run-scikit-learn-on-google-app-engine?lq=1" class="question-hyperlink">Is it possible to run scikit-learn on Google App Engine?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/16295291?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/16295291/pyscripter-can-not-import-modules-in-gae-sdk?lq=1" class="question-hyperlink">PyScripter can not import modules in GAE SDK</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/21979868?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/21979868/google-app-engine-problems-regarding-import-library?lq=1" class="question-hyperlink">Google app engine problems regarding import library</a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/14850853?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/48458?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">100
+    </div>
+</a><a href="http://stackoverflow.com/questions/48458/project-structure-for-google-app-engine?rq=1" class="question-hyperlink">Project structure for Google App Engine</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/110186?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">109
+    </div>
+</a><a href="http://stackoverflow.com/questions/110186/feedback-on-using-google-app-engine?rq=1" class="question-hyperlink">Feedback on using Google App Engine?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1085898?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">134
+    </div>
+</a><a href="http://stackoverflow.com/questions/1085898/choosing-java-vs-python-on-google-app-engine?rq=1" class="question-hyperlink">Choosing Java vs Python on Google App Engine</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/2130899?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/2130899/google-app-engine-python-authorization-web-services-third-party-client?rq=1" class="question-hyperlink">Google App Engine (python) authorization web services /third party client</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/4863557?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">45
+    </div>
+</a><a href="http://stackoverflow.com/questions/4863557/how-do-i-manage-third-party-python-libraries-with-google-app-engine-virtualenv?rq=1" class="question-hyperlink">How do I manage third-party Python libraries with Google App Engine? (virtualenv? pip?)</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/10648256?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/10648256/uploading-python-third-party-libraries-with-google-app-engine?rq=1" class="question-hyperlink">Uploading python third party libraries with Google App engine</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/15324136?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/15324136/how-to-use-custom-python-libraries-and-apps-in-google-app-engine?rq=1" class="question-hyperlink">How to use custom python libraries and apps in Google App Engine?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/18520950?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/18520950/how-to-include-python-dateutil-in-google-app-engine?rq=1" class="question-hyperlink">How to include python-dateutil in Google App Engine?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/21974236?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/21974236/using-a-3d-party-c-library-wrapped-in-python-for-google-app-engine?rq=1" class="question-hyperlink">Using a 3d party C++ library wrapped in Python for Google App Engine</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/30445089?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/30445089/install-third-party-libs-to-be-available-from-within-and-without-the-google-app?rq=1" class="question-hyperlink">Install third party libs to be available from within and without the Google App Engine dev server</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-codereview" title="Code Review Stack Exchange"></div><a href="http://codereview.stackexchange.com/questions/98157/running-lights-embedded-hello-world" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:196 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Running Lights - Embedded "Hello World"
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/49393/how-to-handle-student-plagiarism-appropriately" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to handle student plagiarism appropriately?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/31660783/adding-a-unique-ptr-to-a-class-in-a-vector-results-in-3x-speedup" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Adding a unique_ptr to a class in a vector results in 3x speedup
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-ux" title="User Experience Stack Exchange"></div><a href="http://ux.stackexchange.com/questions/82017/how-can-i-ensure-users-dont-fear-the-word-test-in-the-invitation-for-usability" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:102 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I ensure users don't fear the word TEST in the invitation for usability testing?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/196127/why-does-humidity-cause-a-feeling-of-hotness" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does humidity cause a feeling of hotness?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-diy" title="Home Improvement Stack Exchange"></div><a href="http://diy.stackexchange.com/questions/69938/using-fire-retardant-sealant-for-low-voltage-cables-through-walls" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:73 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Using fire retardant sealant for low-voltage cables through walls
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-emacs" title="Emacs Stack Exchange"></div><a href="http://emacs.stackexchange.com/questions/14269/how-to-detect-if-the-point-is-within-a-comment-area" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:583 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to detect if the point is within a comment area?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/946034/hdd-naming-in-linux" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    HDD naming in Linux?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/31656460/c-sharp-enumerable-take-with-default-value" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    C# Enumerable.Take with default value
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/53876/swap-capitalization-of-two-strings" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Swap capitalization of two strings
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-raspberrypi" title="Raspberry Pi Stack Exchange"></div><a href="http://raspberrypi.stackexchange.com/questions/33880/shutdown-now-or-shutdown-h-now-to-power-off-raspberry-pi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:447 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    "shutdown now" or "shutdown -h now" to power off Raspberry Pi?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="http://mathematica.stackexchange.com/questions/89253/trouble-simplifying-using-replace" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Trouble simplifying using Replace
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-mechanics" title="Motor Vehicle Maintenance &amp; Repair Stack Exchange"></div><a href="http://mechanics.stackexchange.com/questions/18880/does-wheelspinning-damage-my-car" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:224 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does wheelspinning damage my car?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/257289/extending-a-tree" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Extending a tree
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/50238/how-to-have-a-relationship-with-someone-at-the-office" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to have a relationship with someone at the office?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/50216/can-my-resume-mention-a-company-that-my-product-was-resold-to" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Can my resume mention a company that my product was resold to?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/31646092/is-unit-testing-alone-ever-a-good-reason-to-expose-private-instance-variables-vi" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is unit testing alone ever a good reason to expose private instance variables via getters?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="http://academia.stackexchange.com/questions/49476/what-are-the-different-acceptance-levels-in-peer-review" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are the different acceptance levels in peer review?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-gaming" title="Arqade"></div><a href="http://gaming.stackexchange.com/questions/229632/what-to-do-with-repeated-cards" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:41 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What to do with repeated cards
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-english" title="English Language &amp; Usage Stack Exchange"></div><a href="http://english.stackexchange.com/questions/262838/going-through-a-hard-ordeal-to-achieve-something-important" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:97 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Going through a hard ordeal to achieve something important?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/95046/why-disable-javascript-in-tor" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why disable JavaScript in Tor?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/218668/what-does-the-c-flag-exactly-do-in-scp" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What does the `-C` flag exactly do in `scp`?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-codegolf" title="Programming Puzzles &amp; Code Golf Stack Exchange"></div><a href="http://codegolf.stackexchange.com/questions/53913/the-will-rogers-phenomenon" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The Will Rogers Phenomenon
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/31654274/is-it-ever-justified-to-have-an-object-which-has-itself-as-a-field" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it ever justified to have an object which has itself as a field?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/14850853" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/14850853/ivc/3983');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/14850853/ivc/3983" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang">lang-py</div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                        <li><a href="http://salesforce.stackexchange.com/" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2015 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2015.7.27.2754
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+<script>var p = "http", d = "static"; if (document.location.protocol == "https:") { p += "s"; d = "engine"; } var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = p + "://" + d + ".adzerk.net/ados.js"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);</script>
+<script>
+    var ados = ados || {};
+    ados.run = ados.run || [];
+    ados.run.push(function () { ados_setKeywords('python,google-app-engine');; ados_load(); });         
+</script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|python|google-app-engine|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>            
+    
+<script type="text/javascript" src="./How to include third party Python libraries in Google App Engine_ - Stack Overflow_files/p"></script></body></html>

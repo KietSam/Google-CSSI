@@ -1,0 +1,90 @@
+#header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;
+  background: #00BFA5;
+}
+
+#logo-text {
+  position: fixed;
+  left: 0;
+  color: white;
+  text-decoration: none;
+  font-family: 'Raleway';
+  font-size: 7vh;
+  text-shadow:  0.25vh 0.25vh 0vh #ccc, 0.75vh 0.75vh 1.5vh black;
+}
+
+#logo-text:hover {
+  opacity: 0.75;
+}
+
+#logo-pic {
+  top: 1vh;
+  height: 8vh;
+  position: fixed;
+  left: 40vh;
+  text-shadow:  1px 1px 0px #ccc, 3px 3px 8px black;
+}
+
+#search {
+  position: fixed;
+  right: 1vw;
+  top: 0;
+  height: 10vh;
+  margin: 0;
+}
+
+#search-inner {
+  margin-top: 1.5vh;
+  width: 25vw;
+}
+
+
+#searchbox {
+  color: teal;
+  background-color: #B2DFDB;
+  font-size: 3vh;
+  height: 7vh;
+  width: 20vw;
+  border: 0;
+  border-radius: 20vh;
+  box-sizing: border-box;
+  float: left;
+}
+
+
+#submit-button {
+  background-color: #E0F2F1;
+  height: 7vh;
+  font-size: 3vh;
+  width: 5vw;
+  border: 0;
+  float: left;
+  padding: 0;
+}
+
+#pic1 {
+    margin-top: 1.5%;
+    height: 6%;
+}
+
+
+#search {
+  margin-left: 55%;
+  float: right;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    font-family: 'Raleway';
+    color:white;
+    padding:.7%;
+    margin: -.4%;
+    text-align:center;
+    width: 100%;
+    background-color:#00BFA5;
+}
